@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # Transaction exports
-.csv
+*.csv
