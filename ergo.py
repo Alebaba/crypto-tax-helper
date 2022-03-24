@@ -42,10 +42,10 @@ if args.address:
                     if outputs['address'] == args.address and outputs['value'] > 0:
                         timestamp = datetime.utcfromtimestamp(transaction['timestamp']/1000).strftime('%d-%m-%Y')
                         price = get_price_by_date(timestamp)
-                        transaction_amount = outputs['value']*1e-9 # 'value' is in nanoErgs
-                        total_price = price * transaction_amount
+                        transaction_value = outputs['value']*1e-9 # 'value' is in nanoErgs
+                        total_price = price * transaction_value
                         transactions.append(timestamp + ';' 
-                                            + str(transaction_amount) + ';' 
+                                            + str(transaction_value) + ';' 
                                             + str(price) + ';' 
                                             + str(round(total_price, 2)))
                         time.sleep(1.2) # Sleep for 1.2 seconds so the Coingecko API call limit doesn't get exceeded
